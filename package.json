@@ -1,0 +1,36 @@
+{
+  "name": "itsohk",
+  "version": "1.0.0",
+  "description": "ItsOhk is a project aiming at improving Mental health condition of the masses, that detoriated during the COVID Pandemic, due to lack of interaction. We all are aware of the fact that how Humans are social animals, hungry for attention, craving for friendships, and how we all are incomplete without each other. ItsOhk provides you a platform to check your scale of Mental wellbeing. That's our ultimate aim at ItsOhk.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qw-erty/ItsOhk2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chess.js": "^0.12.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.9.18",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "bugs": {
+    "url": "https://github.com/qw-erty/ItsOhk2/issues"
+  },
+  "homepage": "https://github.com/qw-erty/ItsOhk2#readme"
+}

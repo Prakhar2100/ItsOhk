@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Noiseless</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/png" href="games/img/noisless/favicon.png"/>
+  <link rel="stylesheet" href="games/css/noiseless.css">
+</head>
+<body>
+
+  <div class="flex-container">
+    <h1>Noiseless</h1>
+
+    <button id="btn-mute" class="flex-item fa fa-volume-up active" title="Mute/Unmute"></button>
+
+    <div id="welcome-text" class="flex-item">
+      <p>Create your <strong>Own Music</strong> and enjoy</p>
+      <p>Let's Bring out the <strong>Artist</strong> in you</p>
+      <p>and, of course, have <strong>fun</strong>!</p>
+    </div>
+
+    <div id="buttons" class="flex-item">
+      <button id="btn-random">Random</button>
+      <button id="btn-productivity">Productivity</button>
+      <button id="btn-relax">Relax</button>
+    </div>
+
+    <div id="sound-types" class="flex-container flex-item">
+      <div data-key="rain" class="flex-container flex-item">
+        <img src="games/img/noisless/rain.png" alt="Rain" title="Rain" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="thunderstorm" class="flex-container flex-item">
+        <img src="games/img/noisless/thunderstorm.png" alt="Thunderstorm" title="Thunderstorm" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="wind" class="flex-container flex-item">
+        <img src="games/img/noisless/wind.png" alt="Wind" title="Wind" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="forest" class="flex-container flex-item">
+        <img src="games/img/noisless/forest.png" alt="Forest" title="Forest" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="leaves" class="flex-container flex-item">
+        <img src="games/img/noisless/leaves.png" alt="Leaves" title="Leaves" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="waterstream" class="flex-container flex-item">
+        <img src="games/img/noisless/waterstream.png" alt="Water Stream" title="Water Stream" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="seaside" class="flex-container flex-item">
+        <img src="games/img/noisless/seaside.png" alt="Seaside" title="Seaside" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="water" class="flex-container flex-item">
+        <img src="games/img/noisless/water.png" alt="Water" title="Water" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="fire" class="flex-container flex-item">
+        <img src="games/img/noisless/fire.png" alt="Fire" title="Fire" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="summernight" class="flex-container flex-item">
+        <img src="games/img/noisless/summernight.png" alt="Summer Night" title="Summer Night" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="coffee" class="flex-container flex-item">
+        <img src="games/img/noisless/coffee.png" alt="Coffee" title="Coffee" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="train" class="flex-container flex-item">
+        <img src="games/img/noisless/train.png" alt="Train" title="Train" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="fan" class="flex-container flex-item">
+        <img src="games/img/noisless/fan.png" alt="Fan" title="Fan" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="whitenoise" class="flex-container flex-item">
+        <img src="games/img/noisless/whitenoise.png" alt="White noise" title="White noise" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="pinknoise" class="flex-container flex-item">
+        <img src="games/img/noisless/pinknoise.png" alt="Pink noise" title="Pink noise" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+      <div data-key="brownnoise" class="flex-container flex-item">
+        <img src="games/img/noisless/brownnoise.png" alt="Brown noise" title="Brown noise" class="flex-item">
+        <input type="range" min="0" max="100" class="flex-item">
+      </div>
+    </div>
+  </div>
+
+  <audio data-key="rain" src="games/sounds/rain.ogg" loop></audio>
+  <audio data-key="thunderstorm" src="games/sounds/thunderstorm.ogg" loop></audio>
+  <audio data-key="wind" src="games/sounds/wind.ogg" loop></audio>
+  <audio data-key="forest" src="games/sounds/forest.ogg" loop></audio>
+  <audio data-key="leaves" src="games/sounds/leaves.ogg" loop></audio>
+  <audio data-key="waterstream" src="games/sounds/waterstream.ogg" loop></audio>
+  <audio data-key="seaside" src="games/sounds/seaside.ogg" loop></audio>
+  <audio data-key="water" src="games/sounds/water.ogg" loop></audio>
+  <audio data-key="fire" src="games/sounds/fire.ogg" loop></audio>
+  <audio data-key="summernight" src="games/sounds/summernight.ogg" loop></audio>
+  <audio data-key="coffee" src="games/sounds/coffee.ogg" loop></audio>
+  <audio data-key="train" src="games/sounds/train.ogg" loop></audio>
+  <audio data-key="fan" src="games/sounds/fan.ogg" loop></audio>
+  <audio data-key="whitenoise" src="games/sounds/whitenoise.ogg" loop></audio>
+  <audio data-key="pinknoise" src="games/sounds/pinknoise.ogg" loop></audio>
+  <audio data-key="brownnoise" src="games/sounds/brownnoise.ogg" loop></audio>
+
+  <script src="games/js/noiseless.js" charset="utf-8"></script>
+</body>
+</html>

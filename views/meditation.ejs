@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation App</title>
+    <style>
+        /* GENERAL CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VIDEO */
+.video {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+.video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* APP */
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a a a a s s"
+    "a a a a s s"
+    "d d d d s s"
+    "d d d d s s";
+
+  transition: opacity 500ms ease-in-out;
+}
+.inactive {
+  opacity: 0;
+}
+
+/* AUDIO */
+.audio {
+  grid-area: a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.audio img {
+  width: 50px;
+  cursor: pointer;
+}
+.audio .progress {
+  width: 200px;
+  height: 200px;
+
+  position: relative;
+
+  margin: 0 40px;
+}
+.audio .progress svg {
+  width: 200px;
+  height: 200px;
+
+  transform: rotate(45deg);
+
+  position: absolute;
+  z-index: -1;
+}
+.audio .progress .audio-remaining-time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+/* DURATIONS */
+.durations {
+  grid-area: d;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 0 25%;
+}
+.durations .duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.durations .duration img {
+  width: 75px;
+  cursor: pointer;
+
+  filter: drop-shadow(0px 0px 15px #222);
+}
+.durations .duration p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  color: #fff;
+
+  margin-top: 5px;
+
+  text-shadow: 0px 0px 15px #222;
+}
+/* SEASONS */
+.seasons {
+  grid-area: s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40% 0;
+}
+.seasons .season img {
+  width: 75px;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 15px #222);
+}
+
+/* TOGGLE MENU */
+.toggle-menu {
+  display: none;
+}
+
+/* FOR SMALL SCREENS */
+@media screen and (max-width: 600px) {
+  /* VIDEO */
+  .video video {
+    height: 100%;
+  }
+
+  /* APP */
+  .app {
+    grid-template-areas:
+      "a"
+      "a"
+      "a"
+      "d";
+  }
+
+  /* AUDIO */
+  .audio .progress {
+    width: 175px;
+    height: 175px;
+
+    margin: 0 10px;
+  }
+  .audio .play img,
+  .pause img {
+    width: 40px;
+  }
+  .audio .progress svg {
+    width: 175px;
+    height: 175px;
+  }
+  .audio .progress .rect1,
+  .rect {
+    width: 125px;
+    height: 125px;
+  }
+  .audio .progress .audio-remaining-time {
+    font-size: 1.75rem;
+  }
+
+  /* DURATIONS */
+  .durations {
+    padding: 0 10%;
+  }
+  .durations .duration img {
+    width: 60px;
+  }
+  .durations .duration p {
+    font-size: 1rem;
+  }
+
+  /* SEASONS */
+  .seasons {
+    position: absolute;
+    top: 20px;
+    left: -250px;
+    padding: 5px;
+
+    flex-direction: row;
+
+    background-color: #fff;
+
+    border-radius: 0 5px 5px 0;
+
+    transition: left 500ms ease-in-out;
+  }
+  .open {
+    left: 0px;
+  }
+  .seasons .season {
+    margin-left: 10px;
+  }
+  .seasons .season img {
+    width: 50px;
+    filter: none;
+  }
+
+  /* TOGGLE MENU */
+  .toggle-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    margin-left: 10px;
+
+    border-radius: 50%;
+
+    transition: all 500ms ease-in-out;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .toggle-menu:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .toggle-menu img {
+    width: 20px;
+  }
+}
+
+        </style>
+</head>
+<body>
+    <div class="video">
+        <video autoplay loop>
+            <source src="./assets/video/winter.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="app">
+        <div class="audio">
+            <audio>
+                <source src="./assets/audio/meditation.mp3" type="audio/mpeg">
+            </audio>
+            <div class="pause">
+                <img src="./assets/img/pause-button.png" alt="pause">
+            </div>
+            <div class="progress">
+                <svg>
+                    <rect class="rect1" stroke-width="10" rx="8" height="150" width="150" y="25" x="25" stroke="#F07281" fill="transparent"></rect>
+                </svg>
+                <svg>
+                    <rect class="rect" stroke-width="10" rx="8" height="150" width="150" y="25" x="25" stroke="#FFFFFF" fill="transparent"></rect>
+                </svg>
+                <div class="audio-remaining-time">
+                    00:00
+                </div>
+            </div>
+            <div class="play">
+                <img src="./assets/img/play-button.png" alt="play">
+            </div>
+        </div>
+        <div class="durations">
+            <div class="duration" audio-duration="10">
+                <img src="./assets/img/2min.png" alt="10 s">
+                <p>10 s</p>
+            </div>
+            <div class="duration" audio-duration="120">
+                <img src="./assets/img/2min.png" alt="2 min">
+                <p>2 min</p>
+            </div>
+            <div class="duration" audio-duration="300">
+                <img src="./assets/img/5min.png" alt="5 min">
+                <p>5 min</p>
+            </div>
+            <div class="duration" audio-duration="600">
+                <img src="./assets/img/10min.png" alt="10 min">
+                <p>10 min</p>
+            </div>
+            <div class="duration" audio-duration="1200">
+                <img src="./assets/img/20min.png" alt="20 min">
+                <p>20 min</p>
+            </div>
+        </div>
+        <div class="seasons">
+            <div class="season" video-src="./assets/video/winter.mp4">
+                <img src="./assets/img/winter.png" alt="winter">
+            </div>
+            <div class="season" video-src="./assets/video/spring.mp4">
+                <img src="./assets/img/spring.png" alt="spring">
+            </div>
+            <div class="season" video-src="./assets/video/summer.mp4">
+                <img src="./assets/img/summer.png" alt="summer">
+            </div>
+            <div class="season" video-src="./assets/video/autumn.mp4">
+                <img src="./assets/img/autumn.png" alt="autumn">
+            </div>
+            <div class="toggle-menu">
+                <img src="./assets/img/right-arrow.png" alt="open menu">
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./js/toggle-seasons-menu.js"></script>
+    <script src="./js/hide-buttons.js"></script>
+    <script >
+        // SELECT PLAY AND PAUSE BUTTON
+const play = document.querySelector(".play"),
+  pause = document.querySelector(".pause");
+// SELECT AUDIO ELEMENT
+const audio = document.querySelector(".audio audio");
+
+// PLAY AUDIO
+play.addEventListener("click", () => {
+  audio.play();
+  update();
+});
+// PAUSE AUDIO
+pause.addEventListener("click", () => {
+  audio.pause();
+});
+
+// SELECT SEASONS AND THE VIDEO
+const seasons = document.querySelectorAll(".season"),
+  video = document.querySelector(".video video");
+// CHANGE VIDEO
+seasons.forEach((season) => {
+  season.addEventListener("click", () => {
+    video.src = season.getAttribute("video-src");
+  });
+});
+
+// SELECT DURATION BUTTONS
+const durations = document.querySelectorAll(".duration");
+
+// DEFAULT AUDIO DURATION
+let audioDuration = 120; // 2min
+
+// CHANGE AUDIO DURATION
+durations.forEach((duration) => {
+  duration.addEventListener("click", () => {
+    audioDuration = duration.getAttribute("audio-duration");
+    update();
+  });
+});
+
+// SELECT RECT and RMAINING TIME ELEMENT
+const path = document.querySelector(".rect"),
+  remainingTimeEl = document.querySelector(".audio-remaining-time");
+
+// TOTAL LENGTH OF THE PATH (PERIMETER OF THE RECTANGLE)
+const pathLength = path.getTotalLength();
+// SET THE LENGTH OF A DASH TO pathLength
+path.style.strokeDasharray = pathLength;
+
+function update() {
+  // STOP AUDIO
+  if (audio.currentTime >= audioDuration) {
+    audio.pause(); // pause audio
+    audio.currentTime = 0; // stop audio
+  }
+
+  // PORTION PLAYED FROM THE AUDIO
+  let portionPlayed = audio.currentTime / audioDuration;
+
+  // STROKE DASHOFFSET IS PROPOTIONAL TO the portionPlayed
+  path.style.strokeDashoffset = -portionPlayed * pathLength;
+
+  // CALCULATE REMAINING TIME IN SEC
+  let remainingTimeInSec = audioDuration - audio.currentTime;
+  renderRemainingTime(remainingTimeInSec);
+
+  if (!audio.paused) {
+    requestAnimationFrame(update);
+    console.log("update");
+  }
+}
+update();
+
+// RENDER REMAINING TIME
+function renderRemainingTime(timeInSec) {
+  let min = Math.floor(timeInSec / 60);
+  let sec = Math.floor(timeInSec % 60);
+
+  // IF min/sec is a single digit(ex:9) we add a zero before the digit. (ex: 9 becomes 09)
+  min = min < 10 ? `0${min}` : min;
+  sec = sec < 10 ? `0${sec}` : sec;
+
+  remainingTimeEl.innerHTML = `${min}:${sec}`;
+}
+
+    </script>
+</body>
+</html>

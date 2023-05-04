@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Delius Unicase');
+
+#screen{
+  border-radius: 15%;
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+
+  #background {
+  background: center;
+  background-size: cover;
+  text-align: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+#square {
+  background: grey;
+   height: 150px;
+  width: 150px;
+   margin-left: auto;
+    margin-right: auto;
+  border-radius: 10%;
+  padding: 30px;
+  padding-bottom: 50px;
+ position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+span {
+  color: white;
+  font-family: Delius Unicase;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input {
+  margin: 10px;
+}
+
+input[type='range'] {
+    -webkit-appearance: none !important;
+    height:3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: white;
+  height:15px;
+    width:15px;
+  border-radius: 50%;
+}
+
+#rangeR {
+  background: linear-gradient(to right, black, red);
+  margin-top: 20px;
+}
+
+#rangeG {
+  background: linear-gradient(to right, black, green);
+}
+
+#rangeB {
+  background: linear-gradient(to right, black, blue);
+}
+
+
+#rangeR::-webkit-slider-thumb {
+  background: red;
+  border: solid white;
+}
+
+#rangeG::-webkit-slider-thumb {
+  background: green;
+    border: solid white;
+}
+
+#rangeB::-webkit-slider-thumb {
+  background: blue;
+    border: solid white;
+}
+
+button{
+  font-family: Delius Unicase;
+  background: none;
+  border: none;
+  font-size: 15px;
+    color: white;
+  margin: 10px;
+}
