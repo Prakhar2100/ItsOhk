@@ -11,7 +11,14 @@ var express                 = require("express"),
     
 var app = express();
 
-mongoose.connect(process.env.MONGO_URL, {
+// mongoose.connect(process.env.MONGO_URL, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false
+// });
+
+mongoose.connect("mongodb+srv://prakhar95985556:iBlU7eMd2tHUofVp@cluster0.uy438mc.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
