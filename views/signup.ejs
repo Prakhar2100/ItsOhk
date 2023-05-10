@@ -1,87 +1,216 @@
-<style>
-    .form li {
-        list-style: none;
-        text-align: center;
-        display: inline-block;
-    }
 
-    form,
-    h1 {
-        text-align: center;
-    }
+<%- include("partials/headerLogin"); -%>
 
-    .form a {
-        text-decoration: none;
-        border: 2px solid lightgray;
-        border-radius: 4px;
-        background-color: white;
-        padding: 9px;
-        font-style: inherit;
-        font-weight: bold;
-    }
+    <br><br>
 
-    button {
-        border: 2px solid lightgray;
-        border-radius: 4px;
-        background-color: white;
-        padding: 9px 15px;
-        font-style: inherit;
-        font-weight: bold;
-    }
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+      </div>
 
-    button:hover {
-        color: red;
-    }
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sign Up Form</h1>
+    
+            <!-- <div class="form"> -->
+            <form method="POST" action="/api/users/register" class="login-form">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="number" name="age" placeholder="Age">
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="others">Others</option>
+                </select>
 
-    input {
-        border: 2px solid rgb(88, 86, 86);
-        padding: 10px 7px;
-        border-radius: 4px;
+                <div class="btns">
+                <button type="submit">Submit</button>
+                </div>
 
-    }
+                <div class="cta-buttons">
+                    Have an account ? Proceed to <a href="/api/users/login">Login</a>
+                  </div>
+            </form>
+        </div>
+    </section>
 
-    .form {
-        margin: 60px 450px;
-        padding: 130px 0;
-        background-color: #318ab9;
-        border: 1px solid lightgray;
-        box-shadow: inset;
-        border-radius: 4px;
-    }
+    <style>
 
-    .btns {
-        margin: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-</style>
-<%- include("partials/headerhome"); -%>
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(245, 152, 152);
+  /* animation: ripple 15s infinite; */
+  box-shadow: 0px 0px 1px 0px #fc0101;
+}
 
-    <br><br><br><br><br><br>
+.small{
+  width: 400px;
+  height: 400px;
+  left: -100px;
+  bottom: -100px;
+}
 
-    <h1> Sign Up Form </h1>
+.medium{
+  width: 800px;
+  height: 800px;
+  left: -200px;
+  bottom: -200px;
+}
 
-    <div class="form">
+.large{
+  width: 1600px;
+  height: 1600px;
+  left: -300px;
+  bottom: -300px;
+}
 
-        <form method="POST" action="/api/users/register">
+.xlarge{
+  width: 3200px;
+  height: 3200px;
+  left: -400px;
+  bottom: -400px;
+}
 
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
-            <input type="number" name="age" placeholder="age">
-            <select name="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="others">others</option>
-            </select>
+.xxlarge{
+  width: 6400px;
+  height: 6400px;
+  left: -500px;
+  bottom: -500px;
+}
 
-            <div class="btns">
-                <button> Submit </button>
-            </div>
-        </form>
-    </div>
+.shade1{
+  opacity: 0.2;
+  z-index: -100;
+}
+.shade2{
+  opacity: 0.5;
+  z-index: -100;
+}
 
+.shade3{
+  opacity: 0.2;
+  z-index: -100;
+}
 
-    <li><a href="/">Sign Up</a></li>
-    <li><a href="/api/users/logout">Logout!</a></li>
-    <li><a href="/api/users/login">Login!</a></li>
+.shade4{
+  opacity: 0.8;
+  z-index: -100;
+}
+
+.shade5{
+  opacity: 0.9;
+  z-index: -100;
+}
+
+        .hero {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        
+        .hero-content {
+          text-align: center;
+          color: #333;
+          background-color: #f3a183;
+          padding: 30px;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-form input {
+          display: block;
+          width: 300px;
+          padding: 10px;
+          margin: 10px auto;
+          border: 2px solid #888;
+          border-radius: 4px;
+        }
+        
+        .login-form button {
+          display: block;
+          width: 150px;
+          padding: 10px;
+          margin: 20px auto;
+          border: none;
+          border-radius: 4px;
+          background-color: #f3a183;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+                      -4px -4px 8px rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .login-form button:hover {
+          transform: translateY(-2px);
+        }
+        
+        /* .cta-buttons {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        } */
+        
+        .cta-buttons a {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 0 10px;
+          /* border: 2px solid #888; */
+          border-radius: 4px;
+          text-decoration: none;
+          color: #333;
+          font-weight: bold;
+          background-color: #f3a183;
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+                      -4px -4px 8px rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        .cta-buttons a:hover {
+          transform: translateY(-2px);
+          color: white;
+        }
+
+        .login-form select {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 2px solid #888;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Optional: Style the dropdown arrow */
+        .login-form select::-ms-expand {
+        display: none;
+        }
+
+        .login-form select::-webkit-select-placeholder {
+        color: #888;
+        }
+
+        .login-form select:-moz-placeholder {
+        color: #888;
+        }
+
+        .login-form select::-moz-placeholder {
+        color: #888;
+        }
+
+        .login-form select:-ms-input-placeholder {
+        color: #888;
+        }
+
+        .login-form select:focus {
+        outline: none;
+        border-color: #318ab9;
+        }
+          </style>
