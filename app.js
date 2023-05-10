@@ -1,5 +1,6 @@
 
 require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 var express                 = require("express"),
     mongoose                = require("mongoose"),

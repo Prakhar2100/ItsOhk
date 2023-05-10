@@ -16,12 +16,11 @@
     </div>
     
     <div class="content1">
-      <h1><strong>ItsOhk</strong></h1>
-      <p>
-        Find more joy, less stress, and the best sleep ever with ItsOhk. Try it for free today. It is created to inform the person about his/her mental condition and automatically get a consultancy 
-        from a doctor.
-      </p>
-    <button class="btn1" type="button"><a href="/information"><strong>Let's Begin</strong></a></button>
+      <h1 class="titleOK"><strong>IT<span class="animatedOK">S</span>Ohk</strong></h1>
+      <p class="description">
+        Find more joy, less stress, and the best sleep ever with <span class="highlight">ItsOhk</span>. Try it for free today. It is created to inform the person about their mental condition and automatically get a consultancy from a doctor.
+      </p>      
+      <button class="btn1" type="button"><a class="btn-link" href="/information"><strong>Let's Begin</strong></a></button>
     </div>
    
   </div>
@@ -29,17 +28,93 @@
      
      body
      {
-      background: #7acbeb;
+      background: #fabbf7;
       overflow-y: hidden;
 }
 
+.titleOK {
+  font-family: 'Arial', sans-serif;
+  font-size: 48px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.animatedOK {
+  display: inline-block;
+  animation: bounce 1s infinite;
+  transform-origin: center;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.description {
+  font-size: 19px;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #ff3366;
+  font-weight: bold;
+}
+
+.btn1 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  background-color: #f3a183;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2), -2px -2px 8px rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: #f3a183; /* Update with desired hover color */
+}
+
+
+
+.btn-link {
+  /* Add desired styles for the link within the button */
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #f3a183;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #f3a183; /* Update with desired hover color */
+  color: #333333
+}
 
 .circle{
   position: absolute;
   border-radius: 50%;
-  background: white;
+  background: rgb(245, 152, 152);
   animation: ripple 15s infinite;
-  box-shadow: 0px 0px 1px 0px #f10439;
+  box-shadow: 0px 0px 1px 0px #fc0101;
 }
 
 .small{
@@ -125,10 +200,6 @@
   }
 }
 
-.btn1{
-  z-index: 1000000;
-}
-
 .content1
 {
   display: block;
@@ -145,21 +216,4 @@
   margin-top:20px;
 }
 
-.content1 button
-{
-  font-size: 20px;
-  padding: 10px;
-  margin-left: 4px;
-  border:2.0px solid black;
-  box-shadow: inset;
-  text-shadow: 2px;
-  border-radius: 4px;
-  background-color: white;
-  margin: 5px;
-}
-
-.content1 button:hover
-{
-    background-color: rgb(221, 215, 215);
-}
   </style>

@@ -4,37 +4,39 @@ html, body {
 }
 
 body {
-  background-color: #232323;
+  background-color: #eba5f1; /* Change background color to a light grayish tone */
   border-color: transparent;
-  color: white;
-  font-family: Raleway;
-  transition: background 5s;
+  color: black;
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Change font-family to a clean and modern font */
 }
 
 img {
-  width: 100px;
-  padding: 50px;
-  opacity: 0.5;
+  width: 120px; /* Increase width for larger images */
+  padding: 20px; /* Decrease padding for smaller spacing */
+  opacity: 0.7; /* Adjust opacity for a softer look */
 }
 
 h1 {
-  font-size: 50px;
-  text-transform: uppercase;
+  font-size: 42px; /* Decrease font-size for a more balanced heading */
+  text-transform: capitalize; /* Change text-transform to capitalize */
 }
 
 button {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.3); /* Adjust background color transparency for a softer appearance */
   border-style: none;
   border-radius: 25px;
-  color: inherit;
-  font-size: 20px;
-  padding: 0.5em 1.2em;
+  color: #fff; /* Change text color to white */
+  font-size: 18px; /* Decrease font-size for smaller buttons */
+  padding: 0.5em 1em; /* Adjust padding for smaller buttons */
   outline: none;
-  margin: auto 1em;
-  opacity: 0.5;
+  margin: 0.5em 1em;
+  opacity: 0.7; /* Adjust opacity for a softer look */
 }
 
-button:hover, button:active, img:hover, img:active {
+button:hover,
+button:active,
+img:hover,
+img:active {
   cursor: pointer;
 }
 
@@ -69,14 +71,14 @@ input[type="range"].slider-active {
 }
 
 #welcome-text {
-  font-size: 20px;
+  font-size: 24px; /* Decrease font-size for smaller text */
   text-align: center;
-  padding-bottom: 2em;
+  padding-bottom: 1em; /* Decrease padding-bottom for smaller spacing */
 }
 
 #btn-mute {
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em; /* Increase font-size for larger button */
   width: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Decrease margin-bottom for smaller spacing */
 }
