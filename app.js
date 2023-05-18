@@ -71,7 +71,7 @@ app.get("/silk", function(req, res){
     res.render("games/weavesilk.ejs");
 });
 
-app.get("/noisless", function(req, res){
+app.get("/acoustic", function(req, res){
     res.render("games/noisless.ejs");
 });
 
@@ -79,7 +79,7 @@ app.get("/arrange", function(req, res){
     res.render("games/arrange.ejs");
 });
 
-app.get("/gamesAdults", function(req, res){
+app.get("/gamePeace", function(req, res){
     res.render("gamesAdults.ejs");
 });
 
