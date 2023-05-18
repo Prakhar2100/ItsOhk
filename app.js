@@ -98,8 +98,15 @@ app.get("/meditation", function(req, res){
     res.render("meditation/index");
 });
 
+app.get("/uploadSong", function(req, res) {
+    res.render("uploadSong.ejs");
+});
 /// Auth Routes
 app.use('/api/users', require('./routes/users'));
+
+app.use('/resources', require('./routes/resource'))
+
+app.set('view engine', 'ejs');
 
 
 app.listen(3000, function(){

@@ -1,6 +1,72 @@
 <%- include("partials/headerFixed"); -%>
 
 <style>
+  .circle{
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(245, 152, 152);
+  /* animation: ripple 15s infinite; */
+  box-shadow: 0px 0px 1px 0px #fc0101;
+}
+
+.small{
+  width: 400px;
+  height: 400px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 800px;
+  height: 800px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 1600px;
+  height: 1600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 3200px;
+  height: 3200px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 6400px;
+  height: 6400px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+  z-index: -100;
+}
+.shade2{
+  opacity: 0.5;
+  z-index: -100;
+}
+
+.shade3{
+  opacity: 0.2;
+  z-index: -100;
+}
+
+.shade4{
+  opacity: 0.8;
+  z-index: -100;
+}
+
+.shade5{
+  opacity: 0.9;
+  z-index: -100;
+}
     body
     {
         background-image: url();
@@ -25,16 +91,23 @@
    }
 </style>
 <br><br><br><br><br><br><br>
+
+<div class='ripple-background'>
+  <div class='circle xxlarge shade1'></div>
+  <div class='circle xlarge shade2'></div>
+  <div class='circle large shade3'></div>
+  <div class='circle mediun shade4'></div>
+  <div class='circle small shade5'></div>
+</div>
     
 <section id="about" class="about">
     <div class="container">
 
       <div class="row content">
         <div  data-aos="fade-right" data-aos-delay="100">
-          <h2>MIND GAMES</h2>
+          <h2>Cognitive GAMES</h2>
           <br><br>
-          <h3>Lifestyle habits matter when it comes to brain health, and the rewards of increased mental stimulation 
-            can be seen in a very short space of time.
+          <h3>Lifestyle habits impact brain health. Increased mental stimulation yields rapid rewards.
             </h3>
         </div>
         </div>
@@ -50,24 +123,17 @@
           <div class="row" >
             <div class="col-md-6 d-flex align-items-stretch">
               <div class="icon-box" style="background-color: whitesmoke;" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon"><img src="https://image.yaksgames.com/v2/game/a/4/a/a4a52580a2f116769f26acb333b74eb8.jpg?w=200"></div>
-                <h4><a href="/silk">Weave Silk</a></h4>
-                <p>Weavesilk--Generative Art, also known as Silk, is an amazing free online art tool that allows 
-                    you to create colorful digital drawings. Silk was made by Yuri Vishnevsky, with music and sound
-                     crafted by Mat Jarvis.On this website, you can draw beautiful flowing art with Silk. With 
-                     Silk's award-winning magic brush, anyone can be an artist. Relax, express yourself, 
-                     and create mandalas and wallpapers. With the swish of a finger, Silk strands mingle and fuse, 
-                     weaving together into wonderful works of art.</p>
+                <div class="icon"><img src="https://cdn.pixabay.com/photo/2017/01/31/14/36/yin-yang-2024615_960_720.png"></div>
+                <h4><a href="/silk"> Silken Harmony</a></h4>
+                <p>An extraordinary and captivating free online art tool. Effortlessly create mesmerizing digital masterpieces with Silk's award-winning magic brush. Unlock your inner artist, design intricate mandalas and captivating wallpapers, and witness the enchanting strands gracefully weave magnificent works of art with a simple swish of your finger.</p>
               </div>
             </div>
 
             <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
               <div class="icon-box"  style="background-color: whitesmoke;"data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon"><img src="https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhlYWRwaG9uZXN8ZW58MHx8MHx8&w=1000&q=80"></div>
-                <h4><a href="/noisless">Noisless</a></h4>
-                <p>Noisless is a well integrated music tool.You can create your own music using various environmental elements.
-                    You can control the intensity of the sounds and can also switch through various modes like productive
-                    ,random or relaxing.Create your own music and bring out the artist in you..</p>
+                <div class="icon"><img src="https://cdn.pixabay.com/photo/2013/07/13/13/38/peace-symbol-161280_640.png"></div>
+                <h4><a href="/noisless">Acoustic Tranquility</a></h4>
+                <p> An integrated music tool offering effortless composition with environmental elements. Control sound intensity, explore modes, and curate perfect ambiances. Unleash your artistic potential and craft captivating melodies. Your power to create is in your hands with Acoustic Tranquility.</p>
               </div>
             </div>
           </div>
